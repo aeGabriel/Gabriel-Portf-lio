@@ -33,7 +33,7 @@ function setLang(lang) {
     document.getElementById("about-title").textContent = "Sobre mim";
     document.getElementById("skills-title").textContent = "Habilidades";
     document.getElementById("subtitle").textContent =
-      "Portfólio • Tecnologia • Design • Administrativo";
+      "Front-End Developer • UI/UX Designer • Design Gráfico • Conteúdo digital • Administrativo";
     document.getElementById("about-text").textContent =
       "Sou formado no curso Técnico em Desenvolvimento de Sistemas pelo SENAI de São José do Rio Preto.
 Tenho experiência em Front-End, com conhecimentos em HTML, CSS, JavaScript, Python e MySQL.
@@ -47,7 +47,7 @@ Além disso, possuo experiência com tradução de vídeos e criação de conte�
     document.getElementById("about-title").textContent = "About me";
     document.getElementById("skills-title").textContent = "Skills";
     document.getElementById("subtitle").textContent =
-      "Portfolio • Technology • Design • Administrative";
+      "Front-End Developer • UI/UX Designer • Graphic Design • Digital Content • Administrative";
     document.getElementById("about-text").textContent =
       "I graduated in the Technical course in Systems Development from SENAI of São José do Rio Preto.
 
