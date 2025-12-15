@@ -1,64 +1,48 @@
-// Tema claro / escuro
 function toggleTheme() {
   document.body.classList.toggle("dark");
 }
 
-// Animação suave ao carregar
-window.addEventListener("load", () => {
-  document.body.classList.add("fade-in");
-  setLang("pt");
-});
-
-// Conteúdo em PT e EN
-const content = {
-  pt: {
-    subtitle: "Portfólio • Tecnologia • Design • Administrativo",
-    aboutTitle: "Sobre mim",
-    aboutText: "Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em tecnologia, design e área administrativa. Gosto de interfaces clean, criativas e bem organizadas.",
-    skillsTitle: "Habilidades",
-    skills: [
-      "HTML • CSS • JavaScript",
-      "Design Gráfico • UI/UX",
-      "Back-end (Django / Python)",
-      "Pacote Office (Excel, Word, PowerPoint)",
-      "Área Administrativa",
-      "Organização • Proatividade"
-    ],
-    linksTitle: "Links"
-  },
-
-  en: {
-    subtitle: "Portfolio • Technology • Design • Administrative",
-    aboutTitle: "About me",
-    aboutText: "I have a degree in Systems Analysis and Development, with interest in technology, design and administrative roles. I enjoy creating clean, creative and well-organized interfaces.",
-    skillsTitle: "Skills",
-    skills: [
-      "HTML • CSS • JavaScript",
-      "Graphic Design • UI/UX",
-      "Back-end (Django / Python)",
-      "Microsoft Office (Excel, Word, PowerPoint)",
-      "Administrative Area",
-      "Organization • Proactivity"
-    ],
-    linksTitle: "Links"
-  }
-};
-
-// Troca de idioma
 function setLang(lang) {
-  document.getElementById("subtitle").innerText = content[lang].subtitle;
-  document.getElementById("about-title").innerText = content[lang].aboutTitle;
-  document.getElementById("about-text").innerText = content[lang].aboutText;
-  document.getElementById("skills-title").innerText = content[lang].skillsTitle;
-  document.getElementById("links-title").innerText = content[lang].linksTitle;
+  if (lang === "pt") {
+    document.getElementById("subtitle").innerText =
+      "Portfólio • Tecnologia • Design • Administrativo";
 
-  const skillsList = document.getElementById("skills-list");
-  skillsList.innerHTML = "";
+    document.getElementById("about-title").innerText = "Sobre mim";
+    document.getElementById("about-text").innerText =
+      "Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em tecnologia, design e área administrativa. Gosto de criar interfaces bonitas, organizadas e funcionais.";
 
-  content[lang].skills.forEach(skill => {
-    const li = document.createElement("li");
-    li.innerText = skill;
-    li.classList.add("skill-item");
-    skillsList.appendChild(li);
-  });
+    document.getElementById("skills-title").innerText = "Habilidades";
+    document.getElementById("skills-list").innerHTML = `
+      <li>HTML • CSS • JavaScript</li>
+      <li>Design Gráfico • UI/UX</li>
+      <li>Back-end (Django / Python)</li>
+      <li>Pacote Office (Excel, Word, PowerPoint)</li>
+      <li>Área Administrativa e Organização</li>
+      <li>Proatividade e Aprendizado rápido</li>
+    `;
+
+    document.getElementById("links-title").innerText = "Links";
+  } else {
+    document.getElementById("subtitle").innerText =
+      "Portfolio • Technology • Design • Administrative";
+
+    document.getElementById("about-title").innerText = "About me";
+    document.getElementById("about-text").innerText =
+      "I have a degree in Systems Analysis and Development, with interest in technology, design, and administrative roles. I enjoy creating clean, organized and visually pleasing interfaces.";
+
+    document.getElementById("skills-title").innerText = "Skills";
+    document.getElementById("skills-list").innerHTML = `
+      <li>HTML • CSS • JavaScript</li>
+      <li>Graphic Design • UI/UX</li>
+      <li>Back-end (Django / Python)</li>
+      <li>Microsoft Office (Excel, Word, PowerPoint)</li>
+      <li>Administrative Organization</li>
+      <li>Proactivity and Fast Learning</li>
+    `;
+
+    document.getElementById("links-title").innerText = "Links";
+  }
 }
+
+// idioma padrão
+setLang("pt");
