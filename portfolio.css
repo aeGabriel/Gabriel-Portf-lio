@@ -48,6 +48,12 @@ body {
   border-radius: 8px;
   background: var(--card);
   cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.buttons button:hover {
+  background: var(--accent);
+  color: #fff;
 }
 
 .section {
@@ -68,11 +74,13 @@ body {
   padding: 1.2rem;
   border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s;
 }
 
 .card:hover {
   transform: translateY(-6px);
+  background: var(--accent);
+  color: #fff;
 }
 
 .links a {
@@ -80,6 +88,11 @@ body {
   margin: 0.5rem 0;
   text-decoration: none;
   color: var(--text);
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: var(--accent);
 }
 
 footer {
