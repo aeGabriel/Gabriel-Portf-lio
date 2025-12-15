@@ -1,86 +1,55 @@
-let currentLang = "pt";
-let darkMode = false;
-
-// TEXTOS EM PT E EN
-const content = {
-  pt: {
-    subtitle: "Portfólio • Tecnologia • Design • Administrativo",
-
-    aboutTitle: "Sobre mim",
-    aboutText:
-      "Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em tecnologia, design e área administrativa. Gosto de criar interfaces bonitas, funcionais e organizadas, unindo lógica e criatividade.",
-
-    skillsTitle: "Habilidades",
-
-    footer: "© 2025 • Gabriel"
-  },
-
-  en: {
-    subtitle: "Portfolio • Technology • Design • Administrative",
-
-    aboutTitle: "About me",
-    aboutText:
-      "I have a degree in Systems Analysis and Development, with interests in technology, design, and administrative areas. I enjoy creating beautiful, functional, and well-organized interfaces that combine logic and creativity.",
-
-    skillsTitle: "Skills",
-
-    footer: "© 2025 • Gabriel"
-  }
+const skills = {
+  pt: [
+    "HTML • CSS • JavaScript",
+    "UI/UX • Design Gráfico",
+    "Back-end (Django / Python)",
+    "Pacote Office (Excel, Word, PowerPoint)",
+    "Área Administrativa",
+    "Organização • Proatividade"
+  ],
+  en: [
+    "HTML • CSS • JavaScript",
+    "UI/UX • Graphic Design",
+    "Back-end (Django / Python)",
+    "Microsoft Office Suite",
+    "Administrative Skills",
+    "Organization • Proactivity"
+  ]
 };
 
-// APLICA O IDIOMA
-function setLang(lang) {
-  currentLang = lang;
-
-  document.getElementById("subtitle").innerText =
-    content[lang].subtitle;
-
-  document.getElementById("about-title").innerText =
-    content[lang].aboutTitle;
-
-  document.getElementById("about-text").innerText =
-    content[lang].aboutText;
-
-  document.getElementById("skills-title").innerText =
-    content[lang].skillsTitle;
-
-  document.querySelector("footer p").innerText =
-    content[lang].footer;
-
-  animateSections();
-}
-
-// TEMA CLARO / ESCURO
-function toggleTheme() {
-  darkMode = !darkMode;
-  document.body.classList.toggle("dark");
-}
-
-// ANIMAÇÃO SUAVE AO TROCAR IDIOMA
-function animateSections() {
-  const sections = document.querySelectorAll("section");
-
-  sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(20px)";
-
-    setTimeout(() => {
-      section.style.opacity = "1";
-      section.style.transform = "translateY(0)";
-    }, 200);
+function renderSkills(lang) {
+  const container = document.getElementById("skills-cards");
+  container.innerHTML = "";
+  skills[lang].forEach(skill => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.textContent = skill;
+    container.appendChild(card);
   });
 }
 
-// ANIMAÇÃO AO CARREGAR A PÁGINA
-window.onload = () => {
-  setLang("pt");
+function setLang(lang) {
+  if (lang === "pt") {
+    document.getElementById("about-title").textContent = "Sobre mim";
+    document.getElementById("skills-title").textContent = "Habilidades";
+    document.getElementById("subtitle").textContent =
+      "Portfólio • Tecnologia • Design • Administrativo";
+    document.getElementById("about-text").textContent =
+      "Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em tecnologia, design e área administrativa.";
+  } else {
+    document.getElementById("about-title").textContent = "About me";
+    document.getElementById("skills-title").textContent = "Skills";
+    document.getElementById("subtitle").textContent =
+      "Portfolio • Technology • Design • Administrative";
+    document.getElementById("about-text").textContent =
+      "I hold a degree in Systems Analysis and Development, with interest in technology, design and administrative areas.";
+  }
+  renderSkills(lang);
+}
 
-  const header = document.querySelector("header");
-  header.style.opacity = "0";
-  header.style.transform = "translateY(-20px)";
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
 
-  setTimeout(() => {
-    header.style.opacity = "1";
-    header.style.transform = "translateY(0)";
-  }, 200);
-};
+// inicial
+setLang("pt");
