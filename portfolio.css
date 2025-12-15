@@ -1,114 +1,89 @@
 :root {
-  --bg: #f6f7fb;
-  --text: #1f2933;
+  --bg: #fafafa;
+  --text: #222;
   --card: #ffffff;
-  --accent: #b6b2f5;
+  --accent: #b7a6f6;
 }
 
 body.dark {
-  --bg: #111827;
-  --text: #f9fafb;
-  --card: #1f2933;
-  --accent: #a5b4fc;
+  --bg: #121212;
+  --text: #f2f2f2;
+  --card: #1f1f1f;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  padding: 20px;
-  transition: 0.3s;
+  transition: all 0.4s ease;
 }
 
-header {
+.header {
+  padding: 2rem;
   text-align: center;
-  margin-bottom: 40px;
 }
 
-.profile img {
-  width: 110px;
-  height: 110px;
+.profile .photo {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent);
-  margin-bottom: 10px;
-}
-
-.buttons {
-  margin-top: 15px;
+  background: linear-gradient(135deg, #b7a6f6, #f6c1e1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 1rem;
 }
 
 .buttons button {
-  margin: 5px;
-  padding: 6px 12px;
+  margin: 0.3rem;
+  padding: 0.4rem 0.8rem;
   border: none;
-  border-radius: 20px;
+  border-radius: 8px;
+  background: var(--card);
   cursor: pointer;
-  background: var(--accent);
-  color: #fff;
+}
+
+.section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .card {
   background: var(--card);
-  padding: 25px;
-  border-radius: 18px;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  padding: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
 }
 
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skills span {
-  background: var(--accent);
-  color: white;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 14px;
+.card:hover {
+  transform: translateY(-6px);
 }
 
 .links a {
   display: block;
-  margin: 8px 0;
-  color: var(--accent);
+  margin: 0.5rem 0;
   text-decoration: none;
-  font-weight: 500;
+  color: var(--text);
 }
 
 footer {
   text-align: center;
-  margin-top: 40px;
-  opacity: 0.6;
-}
-
-.fade-in {
-  animation: fade 0.8s ease forwards;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsivo */
-@media (min-width: 768px) {
-  body {
-    max-width: 900px;
-    margin: auto;
-  }
+  padding: 2rem;
+  opacity: 0.7;
 }
