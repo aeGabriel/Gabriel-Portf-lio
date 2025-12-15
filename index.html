@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabriel Andrade - Portfólio</title>
+  <title>Gabriel Andrade | Portfolio</title>
   <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
 
-<header>
-  <h1>Gabriel</h1>
-  <p id="subtitle">Portfólio • Tecnologia • Design • Administrativo</p>
+<header class="fade-in">
+  <div class="profile">
+    <img src="foto.jpg" alt="Foto de Gabriel" class="profile-img">
+    <h1>Gabriel Andrade</h1>
+    <p id="subtitle">Portfólio • Tecnologia • Design • Administrativo</p>
+  </div>
 
   <div class="buttons">
     <button onclick="setLang('pt')">PT</button>
@@ -19,38 +22,28 @@
   </div>
 </header>
 
-<section id="about">
+<section id="about" class="fade-in">
   <h2 id="about-title">Sobre mim</h2>
-  <p id="about-text">
-    Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em
-    tecnologia, design e área administrativa. Gosto de criar interfaces
-    bonitas, funcionais e organizadas.
-  </p>
+  <p id="about-text"></p>
 </section>
 
-<section id="skills">
+<section id="skills" class="fade-in">
   <h2 id="skills-title">Habilidades</h2>
-  <ul>
-    <li>HTML • CSS • JavaScript</li>
-    <li>Design Gráfico • UI/UX</li>
-    <li>Back-end (Django / Python)</li>
-    <li>Pacote Office (Excel, Word, PowerPoint)</li>
-    <li>Organização Administrativa</li>
-    <li>Agilidade e Proatividade</li>
-  </ul>
+  <ul id="skills-list"></ul>
 </section>
 
-<section id="Links">
-  <h2>Links</h2>
-  <a href="https://www.linkedin.com/in/gabriel-andrade-9b6713308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Linkedin</a>
-  <a href="https://www.tiktok.com/@eternalslyrics?_r=1&_t=ZS-92FXIMczX3B" target="_blank">TikTok (Traduções)</a>
-  <a href="https://www.instagram.com/gabgallerys?igsh=eDN2NHNmNGYzbDV0" target="_blank">Instagram (Design)</a>
-  <a href="https://aegabriel.github.io/WikiAespa/" target="_blank">Wiki Aespa – Projeto Pessoal (UI/UX + Front-end)</a>
-  <a href="https://aegabriel.github.io/EstoqueAlmoxarifado/" target="_blank">Trabalho de Conclusão de Curso (TCC)</a>
+<section id="links" class="fade-in">
+  <h2 id="links-title">Links</h2>
+
+  <a href="https://www.linkedin.com/in/gabriel-andrade-9b6713308" target="_blank">LinkedIn</a>
+  <a href="https://www.tiktok.com/@eternalslyrics" target="_blank">TikTok • Traduções</a>
+  <a href="https://www.instagram.com/gabgallerys" target="_blank">Instagram • Design</a>
+  <a href="https://aegabriel.github.io/WikiAespa/" target="_blank">Wiki Aespa • Projeto UI/UX</a>
+  <a href="https://aegabriel.github.io/EstoqueAlmoxarifado/" target="_blank">TCC • Sistema de Estoque</a>
 </section>
 
 <footer>
-  <p>© 2025 • Gabriel</p>
+  <p>© 2025 • Gabriel Andrade</p>
 </footer>
 
 <script src="portfolio.js"></script>
