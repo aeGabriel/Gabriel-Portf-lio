@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gabriel Andrade • Portfólio</title>
-  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Gabriel Andrade</h1>
-  <p id="subtitle">Portfólio • Tecnologia • Design • Administrativo</p>
+<header class="fade-in">
+  <div class="profile">
+    <img src="foto.jpg" alt="Foto de Gabriel">
+    <h1>Gabriel Andrade</h1>
+    <p id="subtitle">Portfólio • Tecnologia • Design • Administrativo</p>
+  </div>
 
   <div class="buttons">
     <button onclick="setLang('pt')">PT</button>
@@ -19,35 +22,35 @@
   </div>
 </header>
 
-<section id="about">
+<section class="card fade-in">
   <h2 id="about-title">Sobre mim</h2>
   <p id="about-text">
     Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em
-    tecnologia, design, UI/UX e área administrativa. Gosto de criar interfaces
-    bonitas, organizadas e funcionais.
+    tecnologia, design e área administrativa. Gosto de criar interfaces bonitas,
+    funcionais e bem organizadas.
   </p>
 </section>
 
-<section id="skills">
+<section class="card fade-in">
   <h2 id="skills-title">Habilidades</h2>
-  <ul id="skills-list">
-    <li>HTML • CSS • JavaScript</li>
-    <li>Design Gráfico • UI/UX</li>
-    <li>Back-end (Python / Django)</li>
-    <li>Pacote Office (Excel, Word, PowerPoint)</li>
-    <li>Área Administrativa</li>
-    <li>Organização, agilidade e proatividade</li>
-  </ul>
+  <div class="skills">
+    <span id="skill1">HTML • CSS • JavaScript</span>
+    <span id="skill2">UI/UX • Design Gráfico</span>
+    <span id="skill3">Back-end (Django / Python)</span>
+    <span id="skill4">Pacote Office</span>
+    <span id="skill5">Rotinas Administrativas</span>
+    <span id="skill6">Organização • Proatividade</span>
+  </div>
 </section>
 
-<section id="links">
-  <h2 id="links-title">Links</h2>
+<section id="card fade-in">
+  <h2 id="links-title">Projetos e Links</h2>
   <div class="links">
     <a href="https://www.linkedin.com/in/gabriel-andrade-9b6713308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Linkedin</a>
     <a href="https://www.tiktok.com/@eternalslyrics?_r=1&_t=ZS-92FqvnyHcw5" target="_blank">TikTok • Traduções</a>
     <a href="https://www.instagram.com/gabgallerys?igsh=eDN2NHNmNGYzbDV0" target="_blank">Instagram • Design</a>
-    <a href="https://aegabriel.github.io/WikiAespa/" target="_blank">Wiki Aespa (UI/UX)</a>
-    <a href="https://aegabriel.github.io/EstoqueAlmoxarifado/" target="_blank">TCC • Sistema de Estoque</a>
+    <a href="https://aegabriel.github.io/WikiAespa/" target="_blank">Wiki Aespa</a>
+    <a href="https://aegabriel.github.io/EstoqueAlmoxarifado/" target="_blank">TCC • Estoque Almoxarifado</a>
   </div>
 </section>
 
@@ -55,6 +58,6 @@
   <p>© 2025 • Gabriel Andrade</p>
 </footer>
 
-<script src="portfolio.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
