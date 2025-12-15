@@ -35,7 +35,15 @@ function setLang(lang) {
     document.getElementById("subtitle").textContent =
       "Portfólio • Tecnologia • Design • Administrativo";
     document.getElementById("about-text").textContent =
-      "Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em tecnologia, design e área administrativa.";
+      "I graduated from the Technical course in Systems Development by SENAI of São José do Rio Preto.
+
+I have experience in Front-End, with knowledge in HTML, CSS, JavaScript, Python and MySQL.
+
+I have a great interest in Design (UI/UX and Graphic Design) and Front-End, areas where I can combine creativity and technology to create beautiful, intuitive and functional interfaces.
+
+I am also interested in the administrative area, valuing organization, proactivity and continuous learning.
+
+In addition, I have experience with video translation and digital content creation.";
   } else {
     document.getElementById("about-title").textContent = "About me";
     document.getElementById("skills-title").textContent = "Skills";
