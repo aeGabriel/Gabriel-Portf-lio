@@ -1,99 +1,103 @@
 :root {
-  --bg: #f7f7fb;
-  --text: #2c2c2c;
+  --bg: #f6f7fb;
+  --text: #1f2933;
   --card: #ffffff;
-  --accent: #bfa2db;
+  --accent: #b6b2f5;
 }
 
 body.dark {
-  --bg: #1e1e26;
-  --text: #f1f1f1;
-  --card: #2a2a36;
-  --accent: #d7b6ff;
+  --bg: #111827;
+  --text: #f9fafb;
+  --card: #1f2933;
+  --accent: #a5b4fc;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
+  padding: 20px;
   transition: 0.3s;
 }
 
 header {
-  padding: 2rem;
   text-align: center;
+  margin-bottom: 40px;
 }
 
-header h1 {
-  font-size: 2.2rem;
-}
-
-#subtitle {
-  opacity: 0.7;
-  margin-top: 0.5rem;
+.profile img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  margin-bottom: 10px;
 }
 
 .buttons {
-  margin-top: 1rem;
+  margin-top: 15px;
 }
 
-button {
-  background: var(--card);
+.buttons button {
+  margin: 5px;
+  padding: 6px 12px;
   border: none;
-  padding: 0.4rem 0.7rem;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
-  margin: 0 0.2rem;
+  background: var(--accent);
+  color: #fff;
 }
 
-section {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1.5rem;
+.card {
   background: var(--card);
-  border-radius: 16px;
-  animation: fadeUp 0.8s ease;
+  padding: 25px;
+  border-radius: 18px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-h2 {
-  margin-bottom: 1rem;
-}
-
-ul li {
-  margin-bottom: 0.5rem;
-}
-
-.links {
+.skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 10px;
+}
+
+.skills span {
+  background: var(--accent);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
 }
 
 .links a {
-  background: var(--accent);
-  color: #000;
-  padding: 0.5rem 0.8rem;
-  border-radius: 10px;
+  display: block;
+  margin: 8px 0;
+  color: var(--accent);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 footer {
   text-align: center;
-  padding: 1.5rem;
+  margin-top: 40px;
   opacity: 0.6;
 }
 
-@keyframes fadeUp {
+.fade-in {
+  animation: fade 0.8s ease forwards;
+}
+
+@keyframes fade {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -102,8 +106,9 @@ footer {
 }
 
 /* Responsivo */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
+@media (min-width: 768px) {
+  body {
+    max-width: 900px;
+    margin: auto;
   }
 }
