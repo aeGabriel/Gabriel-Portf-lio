@@ -1,48 +1,86 @@
+let currentLang = "pt";
+let darkMode = false;
+
+// TEXTOS EM PT E EN
+const content = {
+  pt: {
+    subtitle: "Portfólio • Tecnologia • Design • Administrativo",
+
+    aboutTitle: "Sobre mim",
+    aboutText:
+      "Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em tecnologia, design e área administrativa. Gosto de criar interfaces bonitas, funcionais e organizadas, unindo lógica e criatividade.",
+
+    skillsTitle: "Habilidades",
+
+    footer: "© 2025 • Gabriel"
+  },
+
+  en: {
+    subtitle: "Portfolio • Technology • Design • Administrative",
+
+    aboutTitle: "About me",
+    aboutText:
+      "I have a degree in Systems Analysis and Development, with interests in technology, design, and administrative areas. I enjoy creating beautiful, functional, and well-organized interfaces that combine logic and creativity.",
+
+    skillsTitle: "Skills",
+
+    footer: "© 2025 • Gabriel"
+  }
+};
+
+// APLICA O IDIOMA
+function setLang(lang) {
+  currentLang = lang;
+
+  document.getElementById("subtitle").innerText =
+    content[lang].subtitle;
+
+  document.getElementById("about-title").innerText =
+    content[lang].aboutTitle;
+
+  document.getElementById("about-text").innerText =
+    content[lang].aboutText;
+
+  document.getElementById("skills-title").innerText =
+    content[lang].skillsTitle;
+
+  document.querySelector("footer p").innerText =
+    content[lang].footer;
+
+  animateSections();
+}
+
+// TEMA CLARO / ESCURO
 function toggleTheme() {
+  darkMode = !darkMode;
   document.body.classList.toggle("dark");
 }
 
-function setLang(lang) {
-  if (lang === "pt") {
-    document.getElementById("subtitle").innerText =
-      "Portfólio • Tecnologia • Design • Administrativo";
+// ANIMAÇÃO SUAVE AO TROCAR IDIOMA
+function animateSections() {
+  const sections = document.querySelectorAll("section");
 
-    document.getElementById("about-title").innerText = "Sobre mim";
-    document.getElementById("about-text").innerText =
-      "Sou formado em Análise e Desenvolvimento de Sistemas, com interesse em tecnologia, design e área administrativa. Gosto de criar interfaces bonitas, organizadas e funcionais.";
+  sections.forEach(section => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(20px)";
 
-    document.getElementById("skills-title").innerText = "Habilidades";
-    document.getElementById("skills-list").innerHTML = `
-      <li>HTML • CSS • JavaScript</li>
-      <li>Design Gráfico • UI/UX</li>
-      <li>Back-end (Django / Python)</li>
-      <li>Pacote Office (Excel, Word, PowerPoint)</li>
-      <li>Área Administrativa e Organização</li>
-      <li>Proatividade e Aprendizado rápido</li>
-    `;
-
-    document.getElementById("links-title").innerText = "Links";
-  } else {
-    document.getElementById("subtitle").innerText =
-      "Portfolio • Technology • Design • Administrative";
-
-    document.getElementById("about-title").innerText = "About me";
-    document.getElementById("about-text").innerText =
-      "I have a degree in Systems Analysis and Development, with interest in technology, design, and administrative roles. I enjoy creating clean, organized and visually pleasing interfaces.";
-
-    document.getElementById("skills-title").innerText = "Skills";
-    document.getElementById("skills-list").innerHTML = `
-      <li>HTML • CSS • JavaScript</li>
-      <li>Graphic Design • UI/UX</li>
-      <li>Back-end (Django / Python)</li>
-      <li>Microsoft Office (Excel, Word, PowerPoint)</li>
-      <li>Administrative Organization</li>
-      <li>Proactivity and Fast Learning</li>
-    `;
-
-    document.getElementById("links-title").innerText = "Links";
-  }
+    setTimeout(() => {
+      section.style.opacity = "1";
+      section.style.transform = "translateY(0)";
+    }, 200);
+  });
 }
 
-// idioma padrão
-setLang("pt");
+// ANIMAÇÃO AO CARREGAR A PÁGINA
+window.onload = () => {
+  setLang("pt");
+
+  const header = document.querySelector("header");
+  header.style.opacity = "0";
+  header.style.transform = "translateY(-20px)";
+
+  setTimeout(() => {
+    header.style.opacity = "1";
+    header.style.transform = "translateY(0)";
+  }, 200);
+};
